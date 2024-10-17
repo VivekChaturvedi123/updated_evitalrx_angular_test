@@ -1,0 +1,12 @@
+<div *ngIf="patientData">
+    <h2>Patient Details</h2>
+    <p><strong>First Name:</strong> {{ patientData.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ patientData.last_name }}</p>
+    <p><strong>Mobile:</strong> {{ patientData.mobile }}</p>
+    <p><strong>Zipcode:</strong> {{ patientData.zipcode }}</p>
+  </div>
+  
+  <div *ngIf="!patientData && errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+  

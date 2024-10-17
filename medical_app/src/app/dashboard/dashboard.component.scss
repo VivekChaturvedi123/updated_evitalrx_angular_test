@@ -1,0 +1,29 @@
+mat-card {
+  max-width: 1600px;
+  margin: 2em auto;
+}
+mat-form-field {
+  width: 100%;
+}
+table {
+  width: 100%;
+}
+th.mat-header-cell, td.mat-cell {
+  padding: 8px;
+}
+td.mat-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-tooltip {
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 1000;
+  pointer-events: none;
+}

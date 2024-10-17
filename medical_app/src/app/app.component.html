@@ -1,0 +1,22 @@
+<div class="container">
+  <mat-toolbar color="primary">
+    <span>EvitalRx Medicine Order</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/dashboard">Dashboard</button>
+     <button mat-button routerLink="/login">Login</button>
+    <!-- <button mat-button routerLink="/patient-details">Patient List</button> -->
+    <button mat-button routerLink="/checkout">
+      Cart ({{ cartItemCount }})
+    </button>
+  </mat-toolbar>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 EvitalRx. All rights reserved.</p>
+    </div>
+  </footer>
+</div>

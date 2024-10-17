@@ -1,0 +1,32 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-toolbar {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  mat-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #F1F1F1;
+  }
+  
+  button {
+    margin: 10px;
+  }
+  .toast-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    z-index: 9999;
+    text-align: center;
+    pointer-events: none; 
+  }
+  
+  .toast-center .toast {
+    pointer-events: auto; 
+  }
+  

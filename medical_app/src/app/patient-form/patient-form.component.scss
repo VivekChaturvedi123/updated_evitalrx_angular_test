@@ -1,0 +1,21 @@
+mat-card {
+  max-width: 800px;
+  margin: 2em auto;
+}
+mat-form-field {
+  display: block;
+  margin-bottom: 1em;
+}
+
+
+::ng-deep .toast-success {
+  background-color: #28a745 !important;
+}
+
+::ng-deep .toast-error {
+  background-color: #dc3545 !important;
+}
+
+::ng-deep .toast-warning {
+  background-color: #ffc107 !important;
+}

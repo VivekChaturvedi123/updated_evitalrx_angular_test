@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Medicine Details</h2>
+<div mat-dialog-content>
+  <p><strong>Name:</strong> {{ data.medicine_name }}</p>
+  <p><strong>Manufacturer:</strong> {{ data.manufacturer_name }}</p>
+  <p><strong>Price:</strong> {{ data.price }}</p>
+  <p><strong>MRP:</strong> {{ data.mrp }}</p>
+  <p><strong>How it works:</strong> {{ data.how_medicine_works }}</p>
+  <p><strong>Side Effects:</strong> {{ data.side_effects }}</p>
+  <img *ngIf="data.medicine_image" [src]="data.medicine_image" alt="{{ data.medicine_name }}" />
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Close</button>
+</div>
+

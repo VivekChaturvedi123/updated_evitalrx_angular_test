@@ -1,0 +1,42 @@
+<mat-card>
+    <mat-card-title>Place Order</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <input matInput placeholder="Patient ID" formControlName="patient_id">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Delivery Type" formControlName="delivery_type">
+            <mat-option value="pickup">Pickup</mat-option>
+            <mat-option value="delivery">Delivery</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="address">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="City" formControlName="city">
+        </mat-form-field>
+        <mat-form-field >
+          <input matInput placeholder="State" formControlName="state">
+        </mat-form-field>
+        <mat-form-field >
+          <input matInput placeholder="Zipcode" formControlName="zipcode">
+        </mat-form-field>
+        <mat-form-field *ngIf="!orderForm.get('patient_id')?.value">
+          <input matInput placeholder="Patient Name" formControlName="patient_name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Mobile" formControlName="mobile">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Latitude" formControlName="latitude">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Longitude" formControlName="longitude">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!orderForm.valid">Place Order</button>
+      </form>
+    </mat-card-content>
+  </mat-card>

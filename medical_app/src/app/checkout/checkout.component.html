@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-title>Checkout</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let item of cartItems">
+        {{ item.medicine_name }} - Quantity: {{ item.quantity }} - Price: {{ item.price * item.quantity }}
+      </mat-list-item>
+    </mat-list>
+    <p>Total: {{ total }}</p>
+    <button mat-raised-button color="primary" (click)="proceedToOrder()">Add Patient</button>
+  </mat-card-content>
+</mat-card>

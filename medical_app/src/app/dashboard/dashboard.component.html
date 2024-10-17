@@ -1,0 +1,75 @@
+ <mat-card>
+  <mat-card-title>Medicine Search</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput (keyup)="searchMedicines($event)" placeholder="Search medicines">
+    </mat-form-field>
+    <table mat-table [dataSource]="medicines" class="mat-elevation-z8">
+      <ng-container matColumnDef="medicine_name">
+        <th mat-header-cell *matHeaderCellDef> Medicine Name </th>
+        <td mat-cell *matCellDef="let medicine"> {{ medicine.medicine_name | titlecase}} </td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let medicine"> {{ medicine.price }} </td>
+      </ng-container>
+      <ng-container matColumnDef="content">
+        <th mat-header-cell *matHeaderCellDef> content </th>
+        <td mat-cell *matCellDef="let medicine"> {{ medicine.content | titlecase}} </td>
+      </ng-container>
+      <ng-container matColumnDef="size">
+        <th mat-header-cell *matHeaderCellDef> size </th>
+        <td mat-cell *matCellDef="let medicine"> {{ medicine.size }} </td>
+      </ng-container>
+      <ng-container matColumnDef="manufacturer_name">
+        <th mat-header-cell *matHeaderCellDef> manufacturer_name </th>
+        <td mat-cell *matCellDef="let medicine"> {{ medicine.manufacturer_name | titlecase}} </td>
+      </ng-container>
+      <ng-container matColumnDef="gst_percentage">
+        <th mat-header-cell *matHeaderCellDef> gst_percentage </th>
+        <td mat-cell *matCellDef="let medicine"> {{ medicine.gst_percentage }} </td>
+      </ng-container>
+      <ng-container matColumnDef="packing_size">
+        <th mat-header-cell *matHeaderCellDef> packing_size </th>
+        <td mat-cell *matCellDef="let medicine"> {{ medicine.packing_size }} </td>
+      </ng-container>
+      <ng-container matColumnDef="available_for_patient">
+        <th mat-header-cell *matHeaderCellDef>Available</th>
+        <td mat-cell *matCellDef="let medicine"> {{ medicine.available_for_patient | titlecase}} </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let medicine">
+          
+          <button mat-button color="primary"  (click)="addToCart(medicine)">Add to Cart</button>
+          <button mat-button color="accent" (click)="viewMedicineDetails(medicine.medicine_id)">View Details</button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Cart</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let item of cartItems">
+        {{ item.medicine_name }} - Quantity: {{ item.quantity }}
+        <button mat-button (click)="removeFromCart(item.medicine_id)">Remove</button>
+      </mat-list-item>
+    </mat-list>
+    <button mat-raised-button color="primary" (click)="addToPatient()" [disabled]="cartItems.length === 0">
+      Add Patient
+    </button>
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
+
+
+
+
